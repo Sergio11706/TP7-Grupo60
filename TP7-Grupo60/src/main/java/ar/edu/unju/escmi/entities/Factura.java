@@ -24,9 +24,6 @@ public class Factura {
 	@Column(name = "fact_cliente")
 	private Cliente cliente; 
 	
-	@Column(name = "fact_domicilio")
-	private String domicilio; 
-	
 	@Column(name = "fact_total")
 	private double total;
 	
@@ -34,11 +31,10 @@ public class Factura {
 	private boolean estado;
 	
 	
-	public Factura(LocalDate fecha, Cliente cliente, String domicilio, double total) {
+	public Factura(LocalDate fecha, Cliente cliente, double total) {
 		super();
 		this.fecha = fecha;
 		this.cliente = cliente;
-		this.domicilio = domicilio;
 		this.total = total;
 		this.estado = true;
 	}
@@ -62,13 +58,6 @@ public class Factura {
 		this.cliente = cliente;
 	}
 	
-	public String getDomicilio() {
-		return domicilio;
-	}
-	public void setDomicilio(String domicilio) {
-		this.domicilio = domicilio;
-	}
-	
 	public double getTotal() {
 		return total;
 	}
@@ -84,5 +73,12 @@ public class Factura {
 	}
 	
 	
+	public void mostrarFactura() {
+		System.out.println("\nID: "+id);
+		System.out.println("Fecha: "+fecha);
+		System.out.println("Cliente: "+cliente);
+		System.out.println("Domicilio del cliente: "+cliente);
+		System.out.println("Monto total: "+total);
+	}
 	
 }

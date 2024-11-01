@@ -65,9 +65,11 @@ public class Producto {
 		this.estado = estado;
 	}
 	
-	@Override
-    public String toString() {
-        return "ID: " + id + " Descripcion: " + descripcion + " Precio Unitario: " + precioUnitario
-                + " Estado: " + estado;
-    }
+	
+	public void mostrarProducto() {
+		System.out.println("\nID: "+id);
+		System.out.println("Descripcion: "+descripcion);
+		System.out.println("Precio: "+precioUnitario);
+	}
+	
 }

@@ -30,11 +30,12 @@ public class ProductoDaoImp implements IProductoDao {
 		try {
 			manager.getTransaction().begin();
 			manager.merge(producto);
-			manager.getTrasaction().commit();
+			manager.getTransaction().commit();
 		}catch(Exception e){
 			if(manager.getTransaction() != null) {
 				manager.getTransaction().rollback();
 			}
+			System.out.println("No se pudo modificar el producto");
 		}finally {
 			manager.close();
 		}
@@ -50,6 +51,7 @@ public class ProductoDaoImp implements IProductoDao {
 			if(manager.getTransaction() != null) {
 				manager.getTransaction().rollback();
 			}
+			System.out.println("No se pudo eliminar el producto");
 		}finally {
 			manager.close();
 		}
