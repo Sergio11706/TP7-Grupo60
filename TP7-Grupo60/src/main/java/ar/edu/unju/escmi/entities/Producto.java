@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Column;
 
 
@@ -64,9 +65,11 @@ public class Producto {
 		this.estado = estado;
 	}
 	
-	@Override
-    public String toString() {
-        return "ID: " + id + " Descripcion: " + descripcion + " Precio Unitario: " + precioUnitario
-                + " Estado: " + estado;
-    }
+	
+	public void mostrarProducto() {
+		System.out.println("\nID: "+id);
+		System.out.println("Descripcion: "+descripcion);
+		System.out.println("Precio: "+precioUnitario);
+	}
+	
 }
