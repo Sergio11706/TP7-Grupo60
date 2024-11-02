@@ -51,7 +51,26 @@ public class DetalleFactura {
         calcularSubtotal();  
     }
     
-    private void calcularSubtotal() {
+    
+    
+    public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	
+	public double getSubtotal() {
+		return subtotal;
+	}
+
+	public void setSubtotal(double subtotal) {
+		this.subtotal = subtotal;
+	}
+
+	private void calcularSubtotal() {
         if (this.producto != null && this.producto.getPrecioUnitario() > 0) {
             this.subtotal = this.cantidad * this.producto.getPrecioUnitario();
         } else {
